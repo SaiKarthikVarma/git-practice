@@ -24,7 +24,6 @@ fi
 
 dnf list installed git 
 
-VALIDATE $?
 
 if [ $? -ne 0 ]
 then 
