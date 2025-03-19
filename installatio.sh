@@ -36,4 +36,6 @@ then
     else
         echo "mysql installation successfull"
     fi
+else
+    echo "mysql is already installed"
 fi
