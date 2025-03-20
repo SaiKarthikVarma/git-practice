@@ -25,6 +25,7 @@ USAGE(){
     echo "USAGE:: sudo sh redirectors.sh package1 package2 ..."
 }
 
+echo "the script started executed at $(date)"
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
