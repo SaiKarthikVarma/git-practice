@@ -24,8 +24,14 @@ fi
 
 for package in $@
 do
-    echo $package
-
-
+    dnf list installed $package
+    if [ $? -ne 0 ]
+    then 
+        echo "$package is not installed now its going to be installed"
+        dnf install $package -y
+        VALIDATE $? "INSTALLING $package"
+    else 
+        echo "$package is already installed...nothing to do"
+    fi    
 
 done
