@@ -6,7 +6,7 @@ DISK_threshold=5
 while IFS= read -r line
 do
     USAGE=$(echo $line | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
-    PARTI=$(echo $line | grep xfs | awk -F " " '{print $6F}')
+    PARTI=$(echo $line | grep xfs | awk -F " " '{print $7F}')
     if [ $USAGE -ge $DISK_threshold ]
     then 
         echo "$PARTI is more than $DISK_threshold,cureent value is $USAGE"
